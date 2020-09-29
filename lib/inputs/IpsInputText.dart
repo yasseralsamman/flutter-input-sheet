@@ -12,6 +12,7 @@ class IpsInputText extends IpsInput {
   final String _placeholder;
   final Function(String) _onDone;
   final bool autofocus;
+  final bool obscureText;
 
   final _IpsInputText state = _IpsInputText();
 
@@ -21,6 +22,7 @@ class IpsInputText extends IpsInput {
     this._value,
     this._onDone, {
     this.autofocus = false,
+        this.obscureText = false,
   });
 
   @override
@@ -68,6 +70,7 @@ class _IpsInputText extends State<IpsInputText>
       textAlign: TextAlign.center,
       keyboardType: this.widget._textInputType,
       textInputAction: TextInputAction.done,
+      obscureText: this.widget.obscureText,
       controller: this.inputController,
       style: TextStyle(
         fontSize: 19,

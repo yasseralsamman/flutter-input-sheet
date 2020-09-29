@@ -40,6 +40,7 @@ class InputSheet {
   text({
     TextInputType textInputType = TextInputType.text,
     String placeholder = "Placeholder",
+    bool obscureText = false,
     dynamic value,
     Function(String) onDone,
   }) {
@@ -54,6 +55,7 @@ class InputSheet {
       value,
       onDone,
       autofocus: keyboardAutofocus,
+      obscureText: obscureText,
     ));
   }
 
